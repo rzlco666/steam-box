@@ -1,6 +1,7 @@
 name: Update gist with Steam Playtime
 
 on:
+  workflow_dispatch:
   push:
     branches: 
       - master
@@ -8,7 +9,7 @@ on:
     branches:
       - master
   schedule:
-    - cron: "0 * * * *"
+    - cron: "10 * * * *"
     
 
 jobs:
@@ -18,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
-          GIST_ID: 8bf56353bcb3a8e798b55b546b9619cf
+          GIST_ID: 5c6425e264f6c57e162a9d5318be21fe
           STEAM_API_KEY: ${{ secrets.STEAM_API_KEY }}
           STEAM_ID: ${{ secrets.STEAM_ID }}
     steps:
